@@ -4,16 +4,16 @@
     <!-- 
         Exercise 02_05_01
         Author: Eli Boblett
-        Date: 10.02.18 
-        ViewFiles3.php
+        Date: 10.05.18 
+        ViewFiles4.php
      -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View Files 3</title>
+    <title>View Files 4</title>
     <script src="modernizr.custom.65897.js"></script>
 </head>
 <body>
-    <h2>View Files 3</h2>
+    <h2>View Files 4</h2>
     <?php
     // variables
         $dir = "../Exercise-02_01_01";
@@ -33,7 +33,7 @@
                 $fullEntryName = $dir . "/" . $entry;
                 echo "<tr><td>";
                 if (is_file($fullEntryName)) {
-                    echo "<a href=\"$fullEntryName\">$entry</a><br>\n";
+                    echo "<a href=\"FileDownloader.php? fileName=$entry\">" . htmlentities($entry) . "</a><br>\n";
                 }
                 else {
                     echo htmlentities($entry);
