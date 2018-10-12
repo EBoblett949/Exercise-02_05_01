@@ -20,7 +20,7 @@
     <?php  
         $dir = "./comments";
         if (is_dir($dir)) {
-            if ($_POST['save']) {
+            if (isset($_POST['save'])) {
                 if (empty($_POST['name'])) {
                     echo "Unknown Visitor\n";
                 }

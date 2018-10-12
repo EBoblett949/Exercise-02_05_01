@@ -12,6 +12,7 @@
         VisitorComments3.php
      -->
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visitor Comments 3</title>
     <script src="modernizr.custom.65897.js"></script>
@@ -20,7 +21,7 @@
     <?php  
         $dir = "./comments";
         if (is_dir($dir)) {
-            if ($_POST['save']) {
+            if (isset($_POST['save'])) {
                 if (empty($_POST['name'])) {
                     echo "Unknown Visitor\n";
                 }
