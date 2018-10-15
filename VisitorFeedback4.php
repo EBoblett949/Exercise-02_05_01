@@ -9,11 +9,11 @@
      -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visitor Feedback 3</title>
+    <title>Visitor Feedback 4</title>
     <script src="modernizr.custom.65897.js"></script>
 </head>
 <body>
-<h2>Visitor Feedback 3</h2>
+<h2>Visitor Feedback 4</h2>
     <?php
         $dir = "./comments";
         if (is_dir($dir)) {
@@ -22,13 +22,13 @@
                 if ($fileName !== "." && $fileName !== "..") {
                     echo "From <strong>$fileName</strong><br>";
                     // $comments = file($dir . "/" . $fileName);
-                    $fileHandle = fopen($dir . "/" . $fileName . "rb");
+                    $fileHandle = fopen($dir . "/" . $fileName , "rb");
                     if ($fileHandle === false) {
                         echo "There was an error reading file \"$fileName\".<br>\n";
                     }
                     else {
                         $from = fgets($fileHandle);
-                        echo "From: " . htmlentities($comments[0]) . "<br>\n";
+                        echo "From: " . htmlentities($from) . "<br>\n";
                         echo "<hr>\n";
                         fclose($fileHandle);
                     }
