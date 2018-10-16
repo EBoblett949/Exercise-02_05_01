@@ -21,7 +21,6 @@
             foreach ($commentFiles as $fileName) {
                 if ($fileName !== "." && $fileName !== "..") {
                     echo "From <strong>$fileName</strong><br>";
-                    // $comments = file($dir . "/" . $fileName);
                     $fileHandle = fopen($dir . "/" . $fileName , "rb");
                     if ($fileHandle === false) {
                         echo "There was an error reading file \"$fileName\".<br>\n";
@@ -29,17 +28,18 @@
                     else {
                         $from = fgets($fileHandle);
                         echo "From: " . htmlentities($from) . "<br>\n";
+                        $email = fgets($fileHandle);
+                        echo "Email Address: " . htmlentities($email) . "<br>\n";
+                        $date = fgets($fileHandle);
+                        echo "Date: " . htmlentities($date) . "<br>\n";
+                        $comment = "";
+                        while (!feof($fileHandle)) {
+                            $comment = fgets($fileHandle);
+                            echo htmlentities($comment) . "<br>\n";
+                        }
                         echo "<hr>\n";
                         fclose($fileHandle);
                     }
-
-                    // echo "Email Address: " . htmlentities($comments[1]) . "<br>\n";
-                    // echo "Date: " . htmlentities($comments[2]) . "<br>\n";
-                    // $commentLines = count($comments);
-                    // for ($i = 3; $i < $commentLines; $i++) {
-                    //     echo htmlentities($comments[$i]) . "<br>\n";                        
-                    // }
-                    // echo "<hr>\n";
                 }
             }
         }

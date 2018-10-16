@@ -58,14 +58,6 @@
                         }
                         fclose($fileHandle);
                     }
-
-                    if (file_put_contents($saveFileName, $saveString) > 0) {
-                        echo "File \"" . htmlentities($saveFileName) . "\" successfully saved.<br>\n";
-
-                    }
-                    else {
-                        echo "There was an error writing \"" . htmlentities($saveFileName) . "\".<br>\n";
-                    }
                 }
             }
         }
